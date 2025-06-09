@@ -10,7 +10,6 @@ import userRoutes from "./routes/user.routes.js";
 import authRoutes from "./routes/auth.routes.js";
 import albumRoutes from "./routes/album.routes.js";
 import songRoutes from "./routes/song.routes.js";
-import musicianRoutes from "./routes/musician.routes.js";
 
 dotenv.config();
 
