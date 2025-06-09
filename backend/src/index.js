@@ -4,7 +4,7 @@ import cors from "cors";
 
 import { connectDB } from "./lib/db.js";
 import { loggingMiddleware } from "./middleware/logging.middleware.js";
-import { globalErrorHandler, ApiError } from './middleware/errorHandler.middleware.js'; // Adjust path
+import { globalErrorHandler, ApiError } from './middleware/errorHandler.middleware.js';
 
 import userRoutes from "./routes/user.routes.js";
 import authRoutes from "./routes/auth.routes.js";
