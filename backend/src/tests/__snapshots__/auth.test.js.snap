@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Authentication API (/api/auth) POST /api/auth/login should login successfully with valid signature and match snapshot 1`] = `
+{
+  "data": {
+    "address": Any<String>,
+    "boughtAlbums": [],
+    "isMusician": false,
+    "pic": Any<String>,
+    "token": Any<String>,
+    "userId": Any<String>,
+  },
+  "message": "Login successful.",
+  "success": true,
+}
+`;
+
+exports[`Authentication API (/api/auth) POST /api/auth/login should return 400 for invalid address and match error snapshot 1`] = `
+{
+  "error": {
+    "code": "INVALID_ADDRESS_FORMAT",
+    "message": "Invalid wallet address",
+  },
+  "success": false,
+}
+`;
+
+exports[`Authentication API (/api/auth) POST /api/auth/login should return 400 for missing address or signature and match error snapshot 1`] = `
+{
+  "error": {
+    "code": "MISSING_CREDENTIALS",
+    "message": "Address and signature are required",
+  },
+  "success": false,
+}
+`;
+
+exports[`Authentication API (/api/auth) POST /api/auth/login should return 401 for invalid signature (malformed) and match error snapshot 1`] = `
+{
+  "error": {
+    "code": "SIGNATURE_VERIFICATION_ERROR",
+    "details": {
+      "originalError": Any<String>,
+    },
+    "message": "Invalid signature format or data.",
+  },
+  "success": false,
+}
+`;
+
+exports[`Authentication API (/api/auth) POST /api/auth/login should return 401 for signature from wrong address and match error snapshot 1`] = `
+{
+  "error": {
+    "code": "SIGNATURE_ADDRESS_MISMATCH",
+    "message": "Signature does not match the provided address.",
+  },
+  "success": false,
+}
+`;
+
+exports[`Authentication API (/api/auth) POST /api/auth/logout should logout successfully and match snapshot 1`] = `
+{
+  "message": "Logged out successfully",
+  "success": true,
+}
+`;
+
+exports[`Authentication API (/api/auth) POST /api/auth/logout should return 400 for missing address on logout and match error snapshot 1`] = `
+{
+  "error": {
+    "code": "LOGOUT_MISSING_ADDRESS",
+    "message": "Address is required for logout",
+  },
+  "success": false,
+}
+`;

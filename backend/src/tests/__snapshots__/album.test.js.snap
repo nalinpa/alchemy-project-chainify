@@ -1,0 +1,143 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Album API Endpoints GET /api/album/:albumId should return 400 if albumId is not a valid ObjectId format 1`] = `
+{
+  "error": {
+    "code": "INVALID_ID_FORMAT",
+    "message": "Invalid album ID format.",
+  },
+  "success": false,
+}
+`;
+
+exports[`Album API Endpoints GET /api/album/:albumId should return 404 if album not found with a valid ObjectId format 1`] = `
+{
+  "error": {
+    "code": "ALBUM_NOT_FOUND",
+    "message": "Album not found.",
+  },
+  "success": false,
+}
+`;
+
+exports[`Album API Endpoints GET /api/album/published/:albumId should return the publication status of an existing album for the authenticated musician owner 1`] = `
+{
+  "data": {
+    "albumId": Any<String>,
+    "artist": "Status Artist Owner",
+    "isPublished": true,
+    "metadataUri": "ipfs://status_meta_1749439535197",
+    "onChainTokenId": "777",
+    "publicationTxHash": "0x123txhash",
+    "title": "Status Check Album",
+  },
+  "message": "Album publication status retrieved.",
+  "success": true,
+}
+`;
+
+exports[`Album API Endpoints POST /api/album/add should add a new album and return transaction data 1`] = `
+{
+  "albumId": Any<String>,
+  "message": "Album data processed. Please sign and send the transaction to publish.",
+  "success": true,
+  "transactionDetails": {
+    "data": Any<String>,
+    "to": Any<String>,
+    "value": Any<String>,
+  },
+}
+`;
+
+exports[`Album API Endpoints POST /api/album/add should fail if cover image is missing 1`] = `
+{
+  "error": {
+    "code": "MISSING_ALBUM_IMAGE",
+    "message": "Album cover image is required.",
+  },
+  "success": false,
+}
+`;
+
+exports[`Album API Endpoints POST /api/album/add should fail if songId in songsData is invalid 1`] = `
+{
+  "error": {
+    "code": "INVALID_SONG_DATA_FORMAT",
+    "message": "Each song must have a valid songId (ObjectId), title (string), and trackNumber (number).",
+  },
+  "success": false,
+}
+`;
+
+exports[`Album API Endpoints POST /api/album/add should fail if songsData is missing or empty 1`] = `
+{
+  "error": {
+    "code": "MISSING_SONGS_DATA_STRING",
+    "message": "Songs data (as a JSON string) is required and must not be empty.",
+  },
+  "success": false,
+}
+`;
+
+exports[`Album API Endpoints POST /api/album/add should fail if title is missing 1`] = `
+{
+  "error": {
+    "code": "MISSING_ALBUM_DETAILS",
+    "message": "Title, publisher, and release year are required.",
+  },
+  "success": false,
+}
+`;
+
+exports[`Album API Endpoints POST /api/album/buy should return 400 for invalid albumId format 1`] = `
+{
+  "error": {
+    "code": "INVALID_ALBUM_ID_FORMAT",
+    "message": "Invalid albumId format.",
+  },
+  "success": false,
+}
+`;
+
+exports[`Album API Endpoints POST /api/album/buy should return 400 for missing required fields 1`] = `
+{
+  "error": {
+    "code": "MISSING_PARAMS",
+    "message": "Address, albumId, and signature are required.",
+  },
+  "success": false,
+}
+`;
+
+exports[`Album API Endpoints POST /api/album/buy should return 401 for invalid signature 1`] = `
+{
+  "error": {
+    "code": "SIGNATURE_MISMATCH",
+    "message": "Invalid signature. Signer does not match provided address.",
+  },
+  "success": false,
+}
+`;
+
+exports[`Album API Endpoints POST /api/album/buy should return 404 if album not found 1`] = `
+{
+  "error": {
+    "code": "ALBUM_NOT_FOUND",
+    "message": "Album not found.",
+  },
+  "success": false,
+}
+`;
+
+exports[`Album API Endpoints POST /api/album/buy should successfully record album as bought and match snapshot 1`] = `
+{
+  "albumId": Any<String>,
+  "message": Any<String>,
+  "success": Any<Boolean>,
+  "transactionDetails": {
+    "data": Any<String>,
+    "to": Any<String>,
+    "value": Any<String>,
+  },
+}
+`;

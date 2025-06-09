@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`User API (/api/user and related) GET /api/user/musician/profile should access musician data with valid token 1`] = `
+{
+  "data": {
+    "address": Any<String>,
+    "createdAt": Any<String>,
+    "imageUrl": StringMatching /\\^ipfs:\\\\/\\\\/\\.\\+/,
+    "name": Any<String>,
+    "updatedAt": Any<String>,
+    "uri": StringMatching /\\^ipfs:\\\\/\\\\/\\.\\+/,
+  },
+  "message": "Musician profile data retrieved successfully.",
+  "success": true,
+}
+`;
+
+exports[`User API (/api/user and related) GET /api/user/musician/profile should return 401 if no token provided 1`] = `
+{
+  "error": {
+    "code": "NO_TOKEN_PROVIDED",
+    "message": "No token provided",
+  },
+  "success": false,
+}
+`;
+
+exports[`User API (/api/user and related) GET /api/user/musician/profile should return 403 if token is for a non-musician user 1`] = `
+{
+  "error": {
+    "code": "FORBIDDEN_NOT_MUSICIAN",
+    "message": "Forbidden: User is not a musician.",
+  },
+  "success": false,
+}
+`;
+
+exports[`User API (/api/user and related) POST /api/user/musician/add (becomeMusician with JWT) should return 400 for missing image file (with JWT auth) and match error snapshot 1`] = `
+{
+  "error": "Image file is required",
+}
+`;
+
+exports[`User API (/api/user and related) POST /api/user/musician/add (becomeMusician with JWT) should return 400 if already a musician 1`] = `
+{
+  "error": "Address already has a Musician NFT",
+}
+`;
+
+exports[`User API (/api/user and related) POST /api/user/musician/add (becomeMusician with JWT) should return 401 if no token provided (multipart) and match error snapshot 1`] = `
+{
+  "error": {
+    "code": "NO_TOKEN_PROVIDED",
+    "message": "No token provided",
+  },
+  "success": false,
+}
+`;
+
+exports[`User API (/api/user and related) POST /api/user/musician/add (becomeMusician with JWT) should return 401 if no token provided (simplified request - for ECONNRESET debug) 1`] = `
+{
+  "error": {
+    "code": "NO_TOKEN_PROVIDED",
+    "message": "No token provided",
+  },
+  "success": false,
+}
+`;
+
+exports[`User API (/api/user and related) POST /api/user/musician/add (becomeMusician with JWT) should return transaction data for musician NFT mint using JWT and match snapshot 1`] = `
+{
+  "message": "Musician registration initiated. Please sign and send the transaction.",
+  "success": true,
+  "transactionDetails": {
+    "data": Any<String>,
+    "to": Any<String>,
+    "value": Any<String>,
+  },
+}
+`;
+
+exports[`User API (/api/user and related) POST /api/user/musician/check should return 401 if no token provided 1`] = `
+{
+  "error": {
+    "code": "NO_TOKEN_PROVIDED",
+    "message": "No token provided",
+  },
+  "success": false,
+}
+`;
+
+exports[`User API (/api/user and related) POST /api/user/musician/check should return isMusician: false if not musician 1`] = `
+{
+  "isMusician": false,
+  "success": true,
+}
+`;
+
+exports[`User API (/api/user and related) POST /api/user/musician/check should return isMusician: true if musician 1`] = `
+{
+  "isMusician": true,
+  "success": true,
+}
+`;
