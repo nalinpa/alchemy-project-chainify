@@ -14,12 +14,17 @@ const SignInButton: React.FC = () => {
 
     try {
       const provider = await detectEthereumProvider({ mustBeMetaMask: true });
-      if (!provider) {
-        throw new Error("MetaMask not detected. Please install MetaMask and refresh the page.");
+
+      // Check if multiple providers are injected
+      const providers = (window as any).ethereum?.providers || [];
+      const metamaskProvider = providers.find((p: any) => p.isMetaMask) || provider;
+
+      if (!metamaskProvider) {
+          throw new Error("MetaMask not detected. Please install MetaMask.");
       }
 
-      // Request accounts / connect wallet
-      const accounts = await (provider as any).request({ method: "eth_requestAccounts" });
+      // Now use 'metamaskProvider' instead of 'provider' for all subsequent requests
+      const accounts = await metamaskProvider.request({ method: "eth_requestAccounts" });
       if (!accounts || accounts.length === 0) {
         throw new Error("No accounts found. Please ensure your MetaMask wallet is unlocked and connected.");
       }
