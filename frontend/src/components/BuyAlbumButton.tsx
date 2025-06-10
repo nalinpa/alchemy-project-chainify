@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ethers, EthersError } from 'ethers';
+import { ethers } from 'ethers';
 import detectEthereumProvider from '@metamask/detect-provider';
 
 import { axiosInstance } from '../lib/axios'; 

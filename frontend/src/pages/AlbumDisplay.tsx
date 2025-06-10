@@ -3,7 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { axiosInstance } from '../lib/axios';
 import BuyAlbumButton from '../components/BuyAlbumButton';
 import PlayButton from '../components/PlayButton'; 
-import { Music, Calendar, Hash, Info, ChevronRight } from 'lucide-react';
+import { Music, Calendar, Hash, ChevronRight } from 'lucide-react';
 
 // Interfaces for data shapes
 interface AlbumSong {
@@ -161,7 +161,7 @@ return (
               <h3 className="text-2xl font-semibold text-white mb-3 border-b border-gray-800 pb-2">Tracklist</h3>
               {album.songs && album.songs.length > 0 ? (
                 album.songs
-                .map((song, index) => (
+                .map((song) => (
                     <div key={song._id} className="flex items-center justify-between p-3 bg-gray-900/50 hover:bg-gray-800/70 rounded-lg transition-colors">
                       <div className="flex items-center gap-4">
                         <PlayButton song={song} albumId={album._id} artistAddress={artistPageAddress} />

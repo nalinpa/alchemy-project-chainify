@@ -82,7 +82,7 @@ const ArtistPublicAlbumList: React.FC<ArtistAlbumListProps> = ({ artistAddress }
     <div className="space-y-6">
       <div className="pb-4 border-b border-gray-800">
         <h2 className="text-2xl font-bold text-white">
-          Published Albums
+          Published Albums - {artistDisplayName}
         </h2>
         <p className="text-gray-400">A collection of on-chain releases by this artist.</p>
       </div>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Music, Album, Clock, PlusCircle } from 'lucide-react';
+import { Music, Album, Clock } from 'lucide-react';
 import { axiosInstance } from "../lib/axios";
 import { useSharedState } from "@/context/BCContext";
 

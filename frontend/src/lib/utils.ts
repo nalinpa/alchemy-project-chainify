@@ -1,6 +1,6 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
-import { ethers, EthersError } from 'ethers';
+import { EthersError } from 'ethers';
 
 export const cn =(...inputs: ClassValue[]) => {
   return twMerge(clsx(inputs))

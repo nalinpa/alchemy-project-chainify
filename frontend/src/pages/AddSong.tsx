@@ -4,7 +4,7 @@ import { axiosInstance } from "../lib/axios";
 import { useSharedState } from "@/context/BCContext";
 
 // Helper components for consistent UI
-const InputField = ({ label, ...props }) => (
+const InputField = ({ label, ...props }: { label: React.ReactNode, [key: string]: any }) => (
   <div>
     <label htmlFor={props.id || props.name} className="block text-sm font-medium text-gray-400 mb-1">
       {label}
@@ -16,7 +16,7 @@ const InputField = ({ label, ...props }) => (
   </div>
 );
 
-const FileInputField = ({ label, ...props }) => (
+const FileInputField = ({ label, ...props }: { label: React.ReactNode, [key: string]: any }) => (
   <div>
     <label htmlFor={props.id || props.name} className="block text-sm font-medium text-gray-400 mb-1">
       {label}
