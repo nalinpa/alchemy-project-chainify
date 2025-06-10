@@ -1,6 +1,6 @@
 import { ethers } from "ethers";
-import MusicianArtifact from "../../../artifacts/contracts/Musician.sol/Musician.json" with { type: "json" };
-import AlbumArtifact from "../../../artifacts/contracts/Album.sol/Album.json" with { type: "json" };
+import MusicianArtifact from "../contracts/Musician.sol/Musician.json" with { type: "json" };
+import AlbumArtifact from "../artifacts/contracts/Album.sol/Album.json" with { type: "json" };
 import dotenv from "dotenv";
 
 dotenv.config();
